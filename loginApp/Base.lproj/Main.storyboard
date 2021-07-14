@@ -32,16 +32,18 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOi-eo-lHR">
-                                <rect key="frame" x="131" y="207" width="58" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Log In"/>
+                                <rect key="frame" x="129" y="207" width="62" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                </state>
                                 <connections>
                                     <segue destination="ye8-Vs-YyW" kind="showDetail" identifier="loginSegue" id="rB5-u3-Qxv"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
                             <constraint firstItem="FKJ-3k-KTq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="2sc-zC-iMJ"/>
                             <constraint firstItem="zOi-eo-lHR" firstAttribute="top" secondItem="FKJ-3k-KTq" secondAttribute="bottom" constant="6" id="8YT-lI-mKo"/>
@@ -88,7 +90,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="joV-Sq-z7n"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
                             <constraint firstItem="CgN-lf-uQ9" firstAttribute="centerX" secondItem="joV-Sq-z7n" secondAttribute="centerX" id="2Y9-8F-unq"/>
                             <constraint firstItem="pe2-li-zrg" firstAttribute="centerX" secondItem="joV-Sq-z7n" secondAttribute="centerX" id="fs3-jy-pbF"/>
@@ -108,11 +110,17 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
