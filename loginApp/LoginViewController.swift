@@ -2,12 +2,13 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    
     @IBOutlet weak var usernameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.usernameTF.delegate = self
+        self.passwordTF.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -24,3 +25,17 @@ class LoginViewController: UIViewController {
         passwordTF.text = ""
     }
 }
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 0 {
+            passwordTF.becomeFirstResponder()
+        } else if textField.tag == 1 {
+            performSegue(withIdentifier: "loginSegue", sender: nil)
+        }
+        return true
+    }
+    
+}
+
