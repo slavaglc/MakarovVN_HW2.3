@@ -10,6 +10,7 @@ import UIKit
 class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var welcomeLabel: UILabel!
+    
     var userName: String!
     
     override func viewDidLoad() {
@@ -17,8 +18,11 @@ class WelcomeViewController: UIViewController {
         welcomeLabel.text = "Welcome, \(userName ?? "user")!"
     }
     
+    
+    
     @IBAction func logOutTapped() {
-        dismiss(animated: true)
+       dismiss(animated: true)
     }
+    
     
 }
