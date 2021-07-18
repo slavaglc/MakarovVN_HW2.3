@@ -58,16 +58,40 @@
 		F9C96CF8269E343000946963 /* loginApp */ = {
 			isa = PBXGroup;
 			children = (
-				F9C96CF9269E343000946963 /* AppDelegate.swift */,
-				F9C96CFB269E343000946963 /* SceneDelegate.swift */,
-				F9C96CFD269E343000946963 /* LoginViewController.swift */,
-				F9C96D0D269E38AB00946963 /* WelcomeViewController.swift */,
-				F9C96CFF269E343000946963 /* Main.storyboard */,
-				F9C96D02269E343200946963 /* Assets.xcassets */,
-				F9C96D04269E343200946963 /* LaunchScreen.storyboard */,
 				F9C96D07269E343200946963 /* Info.plist */,
+				F9C96D1026A49A7D00946963 /* SupportFiles */,
+				F9C96D0F26A49A6500946963 /* Controllers */,
+				F9C96D1126A49A9900946963 /* GUI */,
 			);
 			path = loginApp;
+			sourceTree = "<group>";
+		};
+		F9C96D0F26A49A6500946963 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F9C96CFD269E343000946963 /* LoginViewController.swift */,
+				F9C96D0D269E38AB00946963 /* WelcomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F9C96D1026A49A7D00946963 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F9C96CF9269E343000946963 /* AppDelegate.swift */,
+				F9C96CFB269E343000946963 /* SceneDelegate.swift */,
+				F9C96D02269E343200946963 /* Assets.xcassets */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		F9C96D1126A49A9900946963 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				F9C96CFF269E343000946963 /* Main.storyboard */,
+				F9C96D04269E343200946963 /* LaunchScreen.storyboard */,
+			);
+			path = GUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
