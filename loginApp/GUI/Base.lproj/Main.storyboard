@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -123,7 +124,7 @@
                             <constraint firstItem="pe2-li-zrg" firstAttribute="top" secondItem="CgN-lf-uQ9" secondAttribute="bottom" constant="152" id="z0t-hb-Jej"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" selectedImage="doc.badge.gearshape" catalog="system" id="A6q-Wt-nsK"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="doc.badge.gearshape" selectedImage="doc.badge.gearshape" catalog="system" id="A6q-Wt-nsK"/>
                     <navigationItem key="navigationItem" id="TsA-dX-PvI"/>
                     <connections>
                         <outlet property="welcomeLabel" destination="CgN-lf-uQ9" id="Jmh-fH-ApO"/>
@@ -168,7 +169,7 @@
                             <constraint firstItem="0vZ-Hq-6Gf" firstAttribute="bottom" secondItem="Zel-MQ-fUc" secondAttribute="bottom" id="ljz-qQ-xjI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Page" selectedImage="person.crop.circle" catalog="system" id="z9u-Rn-u0F"/>
+                    <tabBarItem key="tabBarItem" title="My Page" image="person.crop.circle" selectedImage="person.crop.circle" catalog="system" id="z9u-Rn-u0F"/>
                     <navigationItem key="navigationItem" id="WYC-SK-Ee6"/>
                     <connections>
                         <outlet property="descriptionTV" destination="0vZ-Hq-6Gf" id="Qzh-lU-Brc"/>
@@ -201,7 +202,9 @@
                             <constraint firstItem="wju-R2-Ofy" firstAttribute="centerX" secondItem="VeG-WS-jaO" secondAttribute="centerX" id="lhh-kr-zMT"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Titles" selectedImage="person.3" catalog="system" id="ugk-aT-bcy"/>
+                    <tabBarItem key="tabBarItem" title="Titles" image="person.3" catalog="system" id="ugk-aT-bcy">
+                        <imageReference key="selectedImage" image="person.3" catalog="system" renderingMode="original"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWH-Mg-Txo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -230,7 +233,7 @@
                             <outlet property="delegate" destination="D6a-yO-0FE" id="Zbb-fS-5yx"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Books" id="GX7-5y-3Ju"/>
+                    <tabBarItem key="tabBarItem" title="Books" image="books.vertical" catalog="system" id="GX7-5y-3Ju"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CW3-Ry-d08" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -259,8 +262,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="books.vertical" catalog="system" width="128" height="103"/>
+        <image name="doc.badge.gearshape" width="128" height="128"/>
         <image name="doc.badge.gearshape" catalog="system" width="119" height="128"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
+        <image name="person.crop.circle" width="128" height="128"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

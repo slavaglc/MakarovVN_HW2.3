@@ -22,7 +22,7 @@ class BooksTableViewController: UITableViewController {
         if favouriteBook.title.count > 15 {
             cell.textLabel?.font = UIFont(name: (cell.textLabel?.font.fontName)!, size: 15)
         }
-        cell.textLabel?.text = "\(favouriteBook.author) \(favouriteBook.title)"
+        cell.textLabel?.text = "\(favouriteBook.author) – \(favouriteBook.title)"
         return cell
     }
 }
