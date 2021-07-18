@@ -1,18 +1,11 @@
-//
-//  BooksTableViewController.swift
-//  loginApp
-//
-//  Created by slava on 18.07.2021.
-//
-
 import UIKit
 
 class BooksTableViewController: UITableViewController {
 
     private var currentUser = User.getAdminUser()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         tableView.reloadData()
     }
 
@@ -27,7 +20,6 @@ class BooksTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {return UITableViewCell()}
         let favouriteBook = currentUser.favouriteBooks[indexPath.row]
         if favouriteBook.title.count > 15 {
-            print("get title count")
             cell.textLabel?.font = UIFont(name: (cell.textLabel?.font.fontName)!, size: 15)
         }
         cell.textLabel?.text = "\(favouriteBook.author) \(favouriteBook.title)"
