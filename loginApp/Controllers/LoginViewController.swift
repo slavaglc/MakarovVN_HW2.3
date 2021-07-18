@@ -13,16 +13,13 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.userName = usernameTF.text
-    }
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if usernameTF.text == "" || passwordTF.text == "" {
-            showMessage(title: "Error", message: "Please, type username and password")
-        return false
+        guard let tabBarVC = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarVC.viewControllers else { return }
+        for viewController in viewControllers {
+            if let welcomeVC = viewController as? WelcomeViewController{
+                welcomeVC.user = User.getAdminUser()
+            }
         }
-        return true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -32,6 +29,25 @@ class LoginViewController: UIViewController {
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         usernameTF.text = ""
         passwordTF.text = ""
+    }
+    
+    
+    @IBAction func loginTapped() {
+        if usernameTF.text == "" || passwordTF.text == "" {
+            showMessage(title: "Error", message: "Please, type username and password")
+        } else if usernameTF.text == User.getAdminUser().name && passwordTF.text == User.getAdminUser().password {
+            performSegue(withIdentifier: "loginSegue", sender: nil)
+        } else {
+            showMessage(title: "Error", message: "Your username or password is incorrect")
+        }
+    }
+    
+    @IBAction func forgotTapped(_ sender: UIButton) {
+        if sender.tag == 0 {
+            showMessage(title: "Username", message: "Your username is: \(User.getAdminUser().name)")
+        } else if sender.tag == 1 {
+            showMessage(title: "Password", message: "Your password is: \(User.getAdminUser().password)")
+        }
     }
     
     private func showMessage(title: String, message: String) {
@@ -50,7 +66,7 @@ extension LoginViewController: UITextFieldDelegate {
         case 0:
             passwordTF.becomeFirstResponder()
         case 1:
-            performSegue(withIdentifier: "loginSegue", sender: nil)
+            loginTapped()
         default:
             break
         }
